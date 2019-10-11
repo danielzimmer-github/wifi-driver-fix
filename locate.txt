@@ -1,0 +1,38 @@
+# Kernel Modules location
+echo "Modules dir: /lib/modules/$(uname -r) for kernel version $(uname -r)"
+
+# Kernel location Contents
+ls -l /lib/modules/$(uname -r)
+
+# The compiled kernel drivers are in the relative directory of the Kernel Modual
+# Location 'kernel/drivers'
+
+# Lists all loaded Kernel Modules
+lsmod
+
+# All modules end with the .ko extension
+
+# Install kernel module
+insmod /absolute/path/to/modual
+
+# Remove a Kernel Module
+rmmod /absolute/path/to/modual
+
+# Manage Kernel Modules.
+# It searches through /lib/modules/$(uname -r) for all modules
+modprobe
+
+# Modprobe commands
+#	 Insert module
+modprobe [kernel module]
+#	Remove module with the -r flag
+modprobe -r [kernel module]
+
+# List info on Kernel Modules
+# Does not work on built in modules (see next command)
+modinfo [kernel module]
+
+# For checking the parameters of built in Kernel modules look in 
+# /sys/module/[kernel module]/parameters
+
+
